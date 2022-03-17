@@ -90,7 +90,9 @@ $(function() {
                     if (buttons[i].innerHTML == correctAnswer) {
                         console.log(buttons[i].innerHTML)
                         $("#correctAnswer").css("background-color", "green")
-                        setTimeout(function() { location.reload() }, 5000)
+                        setTimeout(function() {
+                            location.reload()
+                        }, 3000)
 
                     }
                 }
