@@ -72,6 +72,10 @@ $(function() {
         for (i = 0; i <= buttons.length - 1; i++) {
 
             buttons[i].innerHTML = alternativeAnswers[i]
+            if (buttons[i].innerHTML == correctAnswer) {
+                var answerButton = buttons[i]
+                answerButton.setAttribute("id", "correctAnswer")
+            }
         }
 
         //Determing if correct answer is clicked
@@ -79,6 +83,18 @@ $(function() {
         $(".button").click(function() {
             if (this.innerHTML == correctAnswer) {
                 alert("Correct")
+                location.reload();
+            } else {
+                alert("Wrong Answer")
+                for (i = 0; i <= buttons.length - 1; i++) {
+                    if (buttons[i].innerHTML == correctAnswer) {
+                        console.log(buttons[i].innerHTML)
+                        $("#correctAnswer").css("background-color", "green")
+                        setTimeout(function() { location.reload() }, 5000)
+
+                    }
+                }
+                //this.css = CSS("backgroud-color", "red")
             }
 
         })

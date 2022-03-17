@@ -47,8 +47,8 @@ button {
 }
 
 button:hover {
-    background-color: green;
-    border-color: green;
+    background-color: rgb(62, 156, 62);
+    border-color: rgb(62, 156, 62);
 }
 
 @media (max-width:988px) {
