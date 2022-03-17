@@ -46,6 +46,11 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: green;
+    border-color: green;
+}
+
 @media (max-width:988px) {
     div img {
         height: 150px;
