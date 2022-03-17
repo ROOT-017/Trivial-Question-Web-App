@@ -53,9 +53,9 @@ $(function() {
         }
 
         var correctAnswer = presentResults(data)
-        console.log(correctAnswer)
+
         randomCountrySelected.push(correctAnswer)
-        console.log(randomCountrySelected)
+            //console.log(randomCountrySelected)
 
         var alternativeAnswers = randomCountrySelected
 
@@ -66,8 +66,8 @@ $(function() {
             alternativeAnswers[i] = alternativeAnswers[j]
             alternativeAnswers[j] = temp
         }
-        console.log(alternativeAnswers)
-            //Filling buttons names
+        //console.log(alternativeAnswers)
+        //Filling buttons names
         var buttons = $(".button")
         for (i = 0; i <= buttons.length - 1; i++) {
 
@@ -80,7 +80,7 @@ $(function() {
 
         //Determing if correct answer is clicked
 
-        $(".button").click(function() {
+        $(".button").click(function click() {
             if (this.innerHTML == correctAnswer) {
                 alert("Correct")
                 location.reload();
@@ -88,7 +88,7 @@ $(function() {
                 alert("Wrong Answer")
                 for (i = 0; i <= buttons.length - 1; i++) {
                     if (buttons[i].innerHTML == correctAnswer) {
-                        console.log(buttons[i].innerHTML)
+                        // console.log(buttons[i].innerHTML)
                         $("#correctAnswer").css("background-color", "green")
                         setTimeout(function() {
                             location.reload()
