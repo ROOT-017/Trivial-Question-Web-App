@@ -1,3 +1,4 @@
+///Creating the HTTP request for the REST API
 $(function() {
     function get_countries() {
         $.ajax({
@@ -18,21 +19,22 @@ $(function() {
            get_countries();
        }) */
     get_countries();
-
+    //Function to get the response from the API
     function presentResults(data) {
-        // var country = data.results[0].capital;
+        //Variable to get data from the request
         var randomCountry = get_Random_value(data)
 
-        //$(".button").text(data[randomCountry[0]].name.common)
-        var selectedCountry = data[randomCountry[0]].name.common
-            /*  console.log(selectedCountry) */
+        //Getting a random cuontry from the data recieved from the API
+        var selectedCountryName = data[randomCountry[0]].name.common
+            /*  console.log(selectedCountryName) */
         var imgSource = data[randomCountry[0]].flags.png
         $(".flagImage").attr("src", imgSource)
 
-        return selectedCountry
+        return selectedCountryName
     };
-
+    //Function to get a random country
     function get_Random_value(data) {
+        //Self explanatory variables
         var get_values_in_data_size_rage = Math.random() * data.length
         var indexOfRandomItem = Math.floor(get_values_in_data_size_rage)
         var item = data[indexOfRandomItem]
@@ -41,11 +43,13 @@ $(function() {
     };
 
     function countries(data) {
-        //data[0].name.common
+        //Loop to isolate only Countries from the data recieved
         var countries = []
         for (i = 0; i <= data.length - 1; i++) {
             countries.push(data[i].name.common)
         }
+
+        //Loop to get other 3 random countries from the contry country[] array
         var randomCountrySelected = []
         for (j = 0; j <= 2; j++) {
             let randomCountry = get_Random_value(countries)
